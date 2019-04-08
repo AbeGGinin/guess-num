@@ -4,17 +4,20 @@
 #猜錯的話 要告訴他 比答案大/小
 import random
 r = random .randint(1, 100)
+count = 0
 while True:
-    a = input('請輸入數字(1~100):')
-    a = int(a)
-    if a == r:
-        print('終於猜對了！')
+    count += 1  #count = count + 1 的快寫法
+    num = input('請輸入數字(1~100):')
+    num = int(num)
+    if num == r:
+        print('你猜對了！')
+        print('這是你猜的第', count, '次')
         break
-    else:
-        if a != r and a > r:
-            print('比答案小')
-        else:
-            print('比答案大')
+    elif num > r:
+        print('比答案大')
+    elif num < r:
+        print('比答案小')
+    print('這是你猜的第', count, '次')
 
 
         
